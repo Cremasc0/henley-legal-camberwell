@@ -5,6 +5,44 @@ Website for **Henley Legal**, an independent law practice and Public Notary at
 
 - **Live site:** https://cremasc0.github.io/henley-legal-camberwell/
 
+> **This deployment is a design demonstration, not a live site.** It is not operated
+> by, endorsed by, or affiliated with Henley Legal. The name, address, phone, email and
+> ABN are used for illustration while pitching the design. Watermarks, a `noindex`
+> directive, a printed specimen mark and a footer disclaimer are in place to make that
+> clear. See [Demo mode](#demo-mode) for how to strip them out.
+
+## Demo mode
+
+The preview is marked in four places, each tagged `[DEMO LAYER` so `grep` finds them all:
+
+| Where | What it does |
+| --- | --- |
+| `<head>` | `[DEMO]` title prefix; `noindex, nofollow, noarchive, nosnippet, noimageindex` |
+| Banner | Sticky oxblood bar above the header — stays on screen at every scroll position, so it lands in any screenshot |
+| Overlay | Fixed, tiled `DEMO / DESIGN PREVIEW` watermark at 5.5% opacity, `pointer-events: none` so the form stays fully usable |
+| Footer | Disclaimer naming the demo nature and the illustrative contact details |
+
+Two further safeguards:
+
+- **Print.** The stylesheet isolates Form HL-01, so a printed or PDF'd copy is the most
+  convincing "official" artifact this preview can produce. Printing therefore shows the
+  banner, a `SPECIMEN ONLY — NOT A VALID HENLEY LEGAL FORM` strip across the sheet, and
+  the watermark.
+- **Logo export.** The footer's "Download vector logo (.svg)" button is hidden, so the
+  preview does not hand the practice's vector logo to anyone who clicks it.
+
+### Removing demo mode for production
+
+1. Delete every block containing `[DEMO LAYER` (four in `index.html`).
+2. Delete the `<meta name="robots" ...>` tag and the `[DEMO]` prefix in `<title>`.
+3. Delete the `.logo-download-btn { display: none; }` rule to restore logo export.
+4. Replace the illustrative contact details with the client's confirmed details.
+
+Note the deliberate omission of a `robots.txt` `Disallow`. A blocked crawler can never
+read the `noindex` tag, so the URL can still be indexed from inbound links; leaving the
+crawl open is what makes `noindex` effective. If the preview must be private rather than
+merely unindexed, host it behind authentication instead — GitHub Pages cannot do that.
+
 ## What's in this repo
 
 The site is a single, self-contained HTML file — no build step, no package manager,

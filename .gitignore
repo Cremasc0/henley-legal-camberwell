@@ -17,3 +17,6 @@ ehthumbs.db
 .env
 .env.local
 node_modules/
+
+# Local render/preview scratch output
+.preview/

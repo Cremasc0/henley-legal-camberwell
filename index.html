@@ -3,8 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Henley Legal — Public Notary, Business &amp; Property Law in Camberwell</title>
+  <!-- [DEMO LAYER] Title prefix marks the tab, bookmark and any link preview. -->
+  <title>[DEMO] Henley Legal — Public Notary, Business &amp; Property Law in Camberwell</title>
   <meta name="description" content="Henley Legal is an independent law practice and Public Notary at 1378A Toorak Road, Camberwell VIC 3124. Established April 2006.">
+
+  <!-- [DEMO LAYER] Keep the preview out of search results. noindex keeps the
+       page out of the index, noarchive suppresses cached copies, and
+       noimageindex stops the wordmark appearing in Google Images under the
+       practice's name. Deliberately NOT paired with a robots.txt Disallow: a
+       blocked crawler can never read this tag, so the URL can still be indexed
+       from inbound links. -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 
   <!-- Matching inline SVG favicon in warm paper and charcoal ink -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F4F1EA'/%3E%3Crect x='3' y='3' width='58' height='58' fill='none' stroke='%231A1917' stroke-width='2.5'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia,serif' font-size='26' fill='%231A1917'%3E%3Ctspan font-weight='700'%3EH%3C/tspan%3E%3Ctspan font-style='italic' font-weight='400'%3EL%3C/tspan%3E%3C/text%3E%3C/svg%3E">
@@ -1469,6 +1478,104 @@
       margin: 15mm;
     }
 
+    /* ==========================================================================
+       [DEMO LAYER 1/4] — PREVIEW WATERMARK (SCREEN)
+       --------------------------------------------------------------------------
+       This page is a design demonstration prepared for Henley Legal. It is not
+       a live site. To publish a production build, search for "[DEMO LAYER" and
+       remove all four blocks (this one, the print block below, the <body>
+       banner markup, and the footer notice), then drop the robots meta tag and
+       the "[DEMO]" title prefix.
+
+       Why three markings rather than one: a single label is easy to crop out of
+       a screenshot. The banner is sticky, so it appears in any screenshot at any
+       scroll position, and the overlay survives crops that keep the centre of
+       the page.
+       ========================================================================== */
+
+    .demo-banner {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background-color: var(--accent);
+      color: var(--paper-sheet);
+      border-bottom: 1px solid rgba(26, 25, 23, 0.45);
+    }
+
+    .demo-banner-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem 0.9rem;
+      padding: 0.5rem var(--gutter);
+      font-size: 0.8125rem;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .demo-banner-tag {
+      display: inline-block;
+      padding: 0.1rem 0.5rem 0.15rem;
+      border: 1px solid currentColor;
+      border-radius: var(--radius);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .demo-banner-text {
+      font-weight: 500;
+    }
+
+    .demo-banner-sub {
+      font-weight: 400;
+      opacity: 0.85;
+    }
+
+    /* Full-viewport diagonal watermark. `pointer-events: none` keeps the form
+       and every link beneath it fully usable, and `aria-hidden` on the element
+       keeps the repeated word out of the accessibility tree. */
+    .demo-watermark {
+      position: fixed;
+      inset: 0;
+      z-index: 150;
+      pointer-events: none;
+      background-repeat: repeat;
+      background-position: 50% 50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='260'%3E%3Cg transform='rotate(-28 200 130)' fill='rgba(26,25,23,0.055)' font-family='Helvetica,Arial,sans-serif' text-anchor='middle'%3E%3Ctext x='200' y='122' font-size='30' font-weight='700' letter-spacing='6'%3EDEMO%3C/text%3E%3Ctext x='200' y='146' font-size='10.5' letter-spacing='2.4'%3EDESIGN PREVIEW%3C/text%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .demo-footer-notice {
+      margin-top: 0.6rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--rule-light);
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: var(--ink-secondary);
+    }
+
+    .demo-footer-notice strong {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    /* A preview should not hand the practice's vector logo to anyone who clicks
+       "Download vector logo". Delete this rule to restore the button after the
+       work is signed off. */
+    .logo-download-btn {
+      display: none;
+    }
+
+    /* Printed specimen strip inside Form HL-01 — hidden on screen, forced on in
+       the print block below. */
+    .demo-print-specimen {
+      display: none;
+    }
+
     @media print {
       html,
       body {
@@ -1580,11 +1687,74 @@
         color: #333333;
       }
     }
+
+    /* ==========================================================================
+       [DEMO LAYER 2/4] — PREVIEW WATERMARK (PRINT)
+       --------------------------------------------------------------------------
+       The print stylesheet above deliberately isolates Form HL-01, which makes
+       a printed or PDF'd copy the most convincing "official" artifact this demo
+       can produce. The banner is flattened for paper and a specimen strip is
+       forced onto the sheet itself, so the mark cannot be lost by cropping.
+       ========================================================================== */
+    @media print {
+      .demo-banner {
+        position: static !important;
+        display: block !important;
+        background: #FFFFFF !important;
+        color: #000000 !important;
+        border: none !important;
+        border-bottom: 1pt solid #000000 !important;
+      }
+
+      .demo-banner-inner {
+        padding: 5pt 0 !important;
+        font-size: 9pt !important;
+      }
+
+      .demo-banner-tag {
+        border-color: #000000 !important;
+      }
+
+      .demo-watermark {
+        display: block !important;
+      }
+
+      .demo-print-specimen {
+        display: block !important;
+        padding: 5pt 10pt !important;
+        border-bottom: 1pt solid #000000 !important;
+        background: #FFFFFF !important;
+        color: #000000 !important;
+        font-family: var(--font-sans) !important;
+        font-size: 8.5pt !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.08em !important;
+        text-align: center !important;
+        text-transform: uppercase !important;
+      }
+    }
   </style>
 </head>
 <body id="top">
   <!-- Skip link for keyboard and screen-reader users -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ======================================================================
+       [DEMO LAYER 3/4] — PREVIEW BANNER & WATERMARK
+       This page is a design demonstration prepared for Henley Legal and is not
+       a live site. Delete this block (and the other "[DEMO LAYER" blocks) for
+       production. The sticky banner keeps the notice on screen at every scroll
+       position; the overlay below it is purely decorative and cannot be
+       clicked or focused.
+       ====================================================================== -->
+  <div class="demo-banner" role="region" aria-label="Demo preview notice">
+    <div class="demo-banner-inner">
+      <span class="demo-banner-tag">Demo</span>
+      <span class="demo-banner-text">Design preview prepared for Henley Legal — not a live website.</span>
+      <span class="demo-banner-sub">Contact details and branding are illustrative.</span>
+    </div>
+  </div>
+  <div class="demo-watermark" aria-hidden="true"></div>
 
   <!-- ======================================================================
        HEADER — SINGLE-ROW RULED BAR ON WARM PAPER
@@ -1720,6 +1890,13 @@
         <!-- Physical Legal Form Sheet: FORM HL-01 -->
         <div id="hl01-document" class="legal-form-sheet" role="region" aria-label="Form HL-01 Public Notary Appointment Checklist">
           <div class="form-double-rule" aria-hidden="true"></div>
+
+          <!-- [DEMO LAYER] Printed specimen strip. Hidden on screen; forced on
+               by the print block so a printed or PDF'd sheet is never mistaken
+               for a genuine Henley Legal form. -->
+          <div class="demo-print-specimen" aria-hidden="true">
+            Specimen only — not a valid Henley Legal form · design demonstration
+          </div>
 
           <div class="form-masthead">
             <div class="form-code">FORM HL-01 — PUBLIC NOTARY APPOINTMENT CHECKLIST</div>
@@ -2184,6 +2361,10 @@
         <div>
           <p>
             Liability limited by a scheme approved under Professional Standards Legislation. Information on this website is general in nature, applies to Victoria, Australia, and does not constitute legal advice.
+          </p>
+          <!-- [DEMO LAYER 4/4] — remove for production -->
+          <p class="demo-footer-notice">
+            <strong>Demo preview.</strong> This page is a design demonstration prepared for Henley Legal. It is not operated by, endorsed by, or affiliated with the practice, and the name, address, telephone number, email and ABN shown are used for illustration only.
           </p>
         </div>
         <div class="footer-copyright">
