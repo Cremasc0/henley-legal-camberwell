@@ -1636,6 +1636,20 @@
       background-color: var(--accent);
       color: var(--paper-sheet);
       border-bottom: 1px solid rgba(26, 25, 23, 0.45);
+      transition: transform 240ms cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+
+    /* Scrolling down slides the bar out of view; scrolling up brings it back.
+       The class is toggled by the small script in the demo markup block. */
+    .demo-banner.is-scrolled-away {
+      transform: translateY(-100%);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .demo-banner {
+        transition: none;
+      }
     }
 
     .demo-banner-inner {
@@ -1839,6 +1853,7 @@
         color: #000000 !important;
         border: none !important;
         border-bottom: 1pt solid #000000 !important;
+        transform: none !important;
       }
 
       .demo-banner-inner {
@@ -1890,6 +1905,42 @@
     </div>
   </div>
   <div class="demo-watermark" aria-hidden="true"></div>
+
+  <!-- [DEMO LAYER] Auto-hide for the bar: it slides away as you scroll down
+       and returns when you scroll back up. Kept inside this block so the whole
+       demo layer still deletes in one go. -->
+  <script>
+    (function () {
+      'use strict';
+
+      var bar = document.querySelector('.demo-banner');
+      if (!bar) {
+        return;
+      }
+
+      var HIDE_AFTER = 4;  // px of downward movement before the bar hides
+      var TOP_ZONE = 80;   // always visible this close to the top of the page
+      var lastY = window.pageYOffset || document.documentElement.scrollTop;
+
+      // Deliberately no requestAnimationFrame queueing: a latched flag would
+      // stop updating if rAF is ever throttled, and the work here is a few
+      // comparisons plus an idempotent class toggle.
+      window.addEventListener('scroll', function () {
+        var y = window.pageYOffset || document.documentElement.scrollTop;
+        var delta = y - lastY;
+
+        if (y <= TOP_ZONE) {
+          bar.classList.remove('is-scrolled-away');
+        } else if (delta > HIDE_AFTER) {
+          bar.classList.add('is-scrolled-away');
+        } else if (delta < -HIDE_AFTER) {
+          bar.classList.remove('is-scrolled-away');
+        }
+
+        lastY = y;
+      }, { passive: true });
+    })();
+  </script>
 
   <!-- ======================================================================
        HEADER — SINGLE-ROW RULED BAR ON WARM PAPER

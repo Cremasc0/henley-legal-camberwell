@@ -18,7 +18,7 @@ The preview is marked in four places, each tagged `[DEMO LAYER` so `grep` finds 
 | Where | What it does |
 | --- | --- |
 | `<head>` | `[DEMO]` title prefix; `noindex, nofollow, noarchive, nosnippet, noimageindex` |
-| Banner | Sticky oxblood bar above the header — stays on screen at every scroll position, so it lands in any screenshot |
+| Banner | Sticky oxblood bar above the header. It slides out of view as you scroll down and returns when you scroll back up, so it no longer covers content permanently. A 4px threshold stops it flickering on tiny scrolls, and it always shows within 80px of the top |
 | Overlay | Fixed, tiled `DEMO / DESIGN PREVIEW` watermark at 5.5% opacity, `pointer-events: none` so the form stays fully usable |
 | Footer | Disclaimer naming the demo nature and the illustrative contact details |
 
