@@ -1,0 +1,2845 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Henley Legal — Public Notary, Business &amp; Property Law in Camberwell</title>
+  <meta name="description" content="Henley Legal is an independent law practice and Public Notary at 1378A Toorak Road, Camberwell VIC 3124. Established April 2006.">
+
+  <!-- Matching inline SVG favicon in warm paper and charcoal ink -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F4F1EA'/%3E%3Crect x='3' y='3' width='58' height='58' fill='none' stroke='%231A1917' stroke-width='2.5'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia,serif' font-size='26' fill='%231A1917'%3E%3Ctspan font-weight='700'%3EH%3C/tspan%3E%3Ctspan font-style='italic' font-weight='400'%3EL%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+
+  <!-- Exactly 2 Google Fonts: Newsreader (headings) and IBM Plex Sans (body & metadata) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. DESIGN TOKENS — STRICT 3-COLOUR PALETTE (PAPER, INK, MUTED OXBLOOD)
+       ========================================================================== */
+    :root {
+      --paper: #F4F1EA;
+      --paper-sheet: #FAF8F3;
+      --ink: #1A1917;
+      --ink-secondary: rgba(26, 25, 23, 0.72);
+      --ink-muted: rgba(26, 25, 23, 0.56);
+      --rule: rgba(26, 25, 23, 0.20);
+      --rule-light: rgba(26, 25, 23, 0.12);
+      --rule-strong: #1A1917;
+      --accent: #7C2D22;
+      --accent-tint: rgba(124, 45, 34, 0.06);
+
+      --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+      --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+
+      --container-max: 1140px;
+      --gutter: clamp(1.125rem, 3vw, 2.25rem);
+      --radius: 2px;
+    }
+
+    /* ==========================================================================
+       2. BASE RESET & ACCESSIBILITY FOUNDATIONS
+       ========================================================================== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      background-color: var(--paper);
+      color: var(--ink);
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-sans);
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.6;
+      background-color: var(--paper);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    /* Skip link for keyboard navigation */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      z-index: 1000;
+      background-color: var(--ink);
+      color: var(--paper);
+      padding: 0.75rem 1.25rem;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 0;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* Crisp accessible focus outline across all interactive elements */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    h1, h2, h3, h4, p, ul, ol, dl, dd, dt, fieldset, legend {
+      margin: 0;
+    }
+
+    /* Typography defaults */
+    h1, h2, h3 {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-style: normal;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    h1 {
+      font-size: clamp(2.25rem, 4.8vw, 3.85rem);
+      line-height: 1.08;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 3.2vw, 2.45rem);
+      line-height: 1.12;
+    }
+
+    h3 {
+      font-size: clamp(1.3rem, 2vw, 1.55rem);
+      line-height: 1.15;
+    }
+
+    .tabular {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Layout Container */
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
+    }
+
+    /* ==========================================================================
+       3. HEADER & NAVIGATION (UNCLUTTERED RULED BAR ON PAPER)
+       ========================================================================== */
+    .site-header {
+      background-color: var(--paper);
+      border-bottom: 1px solid var(--rule-strong);
+      position: relative;
+      z-index: 20;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding-top: 1.125rem;
+      padding-bottom: 1.125rem;
+    }
+
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--ink);
+      min-height: 44px;
+      padding: 0.125rem 0;
+    }
+
+    .brand-svg {
+      width: 218px;
+      height: auto;
+    }
+
+    .desktop-nav {
+      display: none;
+    }
+
+    .nav-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0.5rem 0.875rem;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 120ms ease, border-color 120ms ease;
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* Mobile menu button — plain text, 1px border, square corners */
+    .menu-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      min-width: 76px;
+      padding: 0.5rem 0.9rem;
+      background-color: transparent;
+      color: var(--ink);
+      border: 1px solid var(--ink);
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+    }
+
+    .menu-toggle:hover {
+      background-color: var(--ink);
+      color: var(--paper);
+    }
+
+    .mobile-drawer {
+      display: none;
+      border-top: 1px solid var(--rule);
+      background-color: var(--paper);
+    }
+
+    .mobile-drawer.is-open {
+      display: block;
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .mobile-nav-list li {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .mobile-nav-list li:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 50px;
+      padding: 0.75rem 0;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .mobile-nav-link:hover {
+      color: var(--accent);
+    }
+
+    .mobile-nav-meta {
+      font-size: 0.8125rem;
+      color: var(--ink-secondary);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ==========================================================================
+       4. BUTTONS & INLINE TEXT LINKS (0-2PX RADIUS, ZERO SHADOWS)
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0.7rem 1.35rem;
+      font-family: var(--font-sans);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      line-height: 1.25;
+      text-decoration: none;
+      border-radius: var(--radius);
+      border: 1px solid var(--ink);
+      cursor: pointer;
+      transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease;
+    }
+
+    .btn-primary {
+      background-color: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: var(--paper);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--ink);
+      color: var(--paper);
+    }
+
+    .text-link {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: var(--rule-strong);
+      transition: color 120ms ease, text-decoration-color 120ms ease;
+    }
+
+    .text-link:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      min-width: 56px;
+      padding: 0.25rem 0.6rem;
+      margin-left: 0.5rem;
+      background-color: transparent;
+      color: var(--ink-secondary);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      cursor: pointer;
+      vertical-align: middle;
+    }
+
+    .copy-btn:hover {
+      border-color: var(--ink);
+      color: var(--ink);
+    }
+
+    .copy-btn.is-copied {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       5. LEAD / OPENING BAND (LEFT-ALIGNED ASYMMETRIC GRID)
+       ========================================================================== */
+    .lead-band {
+      padding-top: clamp(2.5rem, 5vw, 4.5rem);
+      padding-bottom: clamp(2.5rem, 5vw, 4.25rem);
+      border-bottom: 1px solid var(--rule-strong);
+    }
+
+    .lead-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .kicker {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.125rem;
+    }
+
+    .lead-heading {
+      max-width: 18ch;
+      margin-bottom: 1.5rem;
+    }
+
+    .lead-copy {
+      max-width: 58ch;
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--ink-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .lead-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.875rem;
+    }
+
+    /* Office Ledger (Right Column of Lead Band) */
+    .office-ledger {
+      border-top: 1px solid var(--rule-strong);
+      padding-top: 1.5rem;
+    }
+
+    .ledger-row {
+      padding-top: 0.875rem;
+      padding-bottom: 0.875rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .ledger-row:first-child {
+      padding-top: 0;
+    }
+
+    .ledger-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .ledger-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .ledger-phone {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--ink);
+      text-decoration: none;
+      font-variant-numeric: tabular-nums;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .ledger-phone:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .ledger-value {
+      font-size: 0.96875rem;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .ledger-sub {
+      display: block;
+      font-size: 0.875rem;
+      color: var(--ink-secondary);
+      margin-top: 0.15rem;
+    }
+
+    .ledger-email {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-size: 0.96875rem;
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--rule);
+    }
+
+    .ledger-email:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
+
+    /* ==========================================================================
+       6. SHARED EDITORIAL SECTION STRUCTURE (12-COL ASYMMETRIC)
+       ========================================================================== */
+    .editorial-section {
+      padding-top: clamp(3rem, 6vw, 5.25rem);
+      padding-bottom: clamp(3rem, 6vw, 5.25rem);
+      border-bottom: 1px solid var(--rule-strong);
+    }
+
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .section-index {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-intro-title {
+      margin-bottom: 1rem;
+    }
+
+    .section-intro-copy {
+      font-size: 0.96875rem;
+      line-height: 1.65;
+      color: var(--ink-secondary);
+      max-width: 38ch;
+    }
+
+    /* ==========================================================================
+       7. SECTION 01: FORM HL-01 — PUBLIC NOTARY PREPARATION DOCUMENT
+       ========================================================================== */
+    .notary-intro {
+      margin-bottom: 2.25rem;
+    }
+
+    .notary-intro-note {
+      font-size: 1.03125rem;
+      line-height: 1.65;
+      color: var(--ink-secondary);
+      max-width: 60ch;
+      padding-top: 0.25rem;
+    }
+
+    /* The physical legal form sheet */
+    .legal-form-sheet {
+      background-color: var(--paper-sheet);
+      border: 1px solid var(--ink);
+      border-radius: 0;
+    }
+
+    .form-double-rule {
+      border-top: 2px solid var(--ink);
+      margin-top: 3px;
+      border-bottom: 1px solid var(--ink);
+    }
+
+    .form-masthead {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem 1.5rem;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--ink);
+    }
+
+    .form-code {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .form-office-stamp {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--ink-secondary);
+    }
+
+    /* Form Parts */
+    .form-part {
+      border-bottom: 1px solid var(--ink);
+    }
+
+    .form-part:last-of-type {
+      border-bottom: none;
+    }
+
+    .form-part-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem 1rem;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid var(--rule);
+      background-color: var(--paper);
+    }
+
+    .form-part-title {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .form-part-hint {
+      font-size: 0.8125rem;
+      color: var(--ink-secondary);
+    }
+
+    .form-fieldset {
+      border: 0;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Row A — Document category radio rows */
+    .doc-category-list {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .doc-category-row {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.875rem;
+      min-height: 52px;
+      padding: 0.9rem 1.25rem;
+      border-bottom: 1px solid var(--rule);
+      cursor: pointer;
+      transition: background-color 120ms ease;
+    }
+
+    .doc-category-row:last-child {
+      border-bottom: none;
+    }
+
+    .doc-category-row:hover {
+      background-color: var(--paper);
+    }
+
+    .doc-category-row.is-selected {
+      background-color: var(--accent-tint);
+    }
+
+    .doc-category-row input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 44px;
+      height: 44px;
+      margin: 0;
+      left: 0.5rem;
+      top: 0.25rem;
+      cursor: pointer;
+    }
+
+    .custom-radio-box {
+      flex: 0 0 18px;
+      width: 18px;
+      height: 18px;
+      margin-top: 0.15rem;
+      border: 1px solid var(--ink);
+      border-radius: 0;
+      background-color: var(--paper-sheet);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .doc-category-row.is-selected .custom-radio-box,
+    .auth-option-row.is-selected .custom-radio-box {
+      border-color: var(--accent);
+      background-color: var(--accent);
+    }
+
+    .custom-radio-mark {
+      width: 6px;
+      height: 6px;
+      background-color: var(--paper-sheet);
+      display: none;
+    }
+
+    .doc-category-row.is-selected .custom-radio-mark,
+    .auth-option-row.is-selected .custom-radio-mark {
+      display: block;
+    }
+
+    .doc-category-row input[type="radio"]:focus-visible + .custom-radio-box,
+    .auth-option-row input[type="radio"]:focus-visible + .custom-radio-box {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .doc-cat-code {
+      flex: 0 0 auto;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+      font-variant-numeric: tabular-nums;
+      margin-top: 0.08rem;
+      min-width: 1.75rem;
+    }
+
+    .doc-category-row.is-selected .doc-cat-code {
+      color: var(--accent);
+    }
+
+    .doc-cat-label {
+      font-size: 0.96875rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    /* Row B — Destination authentication radio strip */
+    .auth-options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .auth-option-row {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      min-height: 52px;
+      padding: 0.9rem 1.25rem;
+      border-bottom: 1px solid var(--rule);
+      cursor: pointer;
+      transition: background-color 120ms ease;
+    }
+
+    .auth-option-row:last-child {
+      border-bottom: none;
+    }
+
+    .auth-option-row:hover {
+      background-color: var(--paper);
+    }
+
+    .auth-option-row.is-selected {
+      background-color: var(--accent-tint);
+    }
+
+    .auth-option-row input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 44px;
+      height: 44px;
+      margin: 0;
+      left: 0.5rem;
+      top: 0.25rem;
+      cursor: pointer;
+    }
+
+    .auth-option-text {
+      font-size: 0.9375rem;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+
+    /* Row C — Numbered Checklist Table */
+    .checklist-table {
+      width: 100%;
+    }
+
+    .checklist-row {
+      display: grid;
+      grid-template-columns: 2.5rem 44px 1fr;
+      align-items: start;
+      border-bottom: 1px solid var(--rule);
+      transition: background-color 120ms ease;
+    }
+
+    .checklist-row:last-child {
+      border-bottom: none;
+    }
+
+    .checklist-row:hover {
+      background-color: var(--paper);
+    }
+
+    .checklist-num {
+      padding: 1rem 0 1rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+      font-variant-numeric: tabular-nums;
+      line-height: 1.5;
+    }
+
+    .checklist-check-wrap {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      padding-top: 1.05rem;
+      cursor: pointer;
+    }
+
+    .checklist-check-wrap input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 44px;
+      height: 44px;
+      top: 0.25rem;
+      left: 0;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .custom-checkbox-box {
+      width: 18px;
+      height: 18px;
+      border: 1.25px solid var(--ink);
+      border-radius: 0;
+      background-color: var(--paper-sheet);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .checklist-check-wrap input[type="checkbox"]:focus-visible + .custom-checkbox-box {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .checklist-row.is-checked .custom-checkbox-box {
+      background-color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .check-tick {
+      width: 12px;
+      height: 12px;
+      stroke: var(--paper-sheet);
+      stroke-width: 2;
+      fill: none;
+      opacity: 0;
+    }
+
+    .checklist-row.is-checked .check-tick {
+      opacity: 1;
+    }
+
+    .checklist-label {
+      display: block;
+      padding: 0.95rem 1.25rem 0.95rem 0.35rem;
+      cursor: pointer;
+      font-size: 0.96875rem;
+      line-height: 1.55;
+      color: var(--ink);
+    }
+
+    .checklist-item-title {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .checklist-item-detail {
+      color: var(--ink-secondary);
+    }
+
+    .checklist-row.is-checked .checklist-label {
+      opacity: 0.56;
+    }
+
+    .checklist-row.is-checked .checklist-item-title {
+      text-decoration: line-through;
+      text-decoration-thickness: 1px;
+    }
+
+    /* Row D — Australian DFAT Authentication Guidance Note */
+    .guidance-block {
+      padding: 1.125rem 1.25rem;
+      background-color: var(--paper);
+      border-top: 1px solid var(--rule);
+    }
+
+    .guidance-heading {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .guidance-text {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--ink);
+      max-width: 74ch;
+    }
+
+    /* Form Footer Bar */
+    .form-footer-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      border-top: 1px solid var(--ink);
+      background-color: var(--paper-sheet);
+    }
+
+    .form-status {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      color: var(--accent);
+    }
+
+    .form-status.is-complete {
+      color: var(--ink);
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    /* Print-only appointment header/footer inside Form HL-01 */
+    .print-only-notes {
+      display: none;
+    }
+
+    /* ==========================================================================
+       8. SECTION 02: PRACTICE AREAS (1PX-RULED EDITORIAL INDEX)
+       ========================================================================== */
+    .practice-index {
+      border-top: 1px solid var(--rule-strong);
+    }
+
+    .practice-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      padding-top: 1.75rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .practice-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .practice-num {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+      line-height: 1.4;
+    }
+
+    .practice-body h3 {
+      margin-bottom: 0.6rem;
+    }
+
+    .practice-desc {
+      font-size: 0.96875rem;
+      line-height: 1.6;
+      color: var(--ink-secondary);
+      margin-bottom: 1.125rem;
+      max-width: 60ch;
+    }
+
+    .matter-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.45rem 1.75rem;
+    }
+
+    .matter-list li {
+      position: relative;
+      padding-left: 1rem;
+      font-size: 0.90625rem;
+      line-height: 1.45;
+      color: var(--ink);
+    }
+
+    .matter-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 6px;
+      height: 1px;
+      background-color: var(--ink-muted);
+    }
+
+    /* ==========================================================================
+       9. SECTION 03: WORKING WITH HENLEY LEGAL (THREE RULED ITEMS)
+       ========================================================================== */
+    .approach-list {
+      border-top: 1px solid var(--rule-strong);
+    }
+
+    .approach-item {
+      padding-top: 1.6rem;
+      padding-bottom: 1.6rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .approach-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .approach-item h3 {
+      margin-bottom: 0.55rem;
+    }
+
+    .approach-item p {
+      font-size: 0.96875rem;
+      line-height: 1.65;
+      color: var(--ink-secondary);
+      max-width: 60ch;
+    }
+
+    /* ==========================================================================
+       10. SECTION 04: CONTACT & APPOINTMENTS
+       ========================================================================== */
+    .contact-ledger {
+      margin-top: 1.75rem;
+      border-top: 1px solid var(--rule-strong);
+    }
+
+    .contact-ledger-row {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .contact-ledger-row:last-child {
+      border-bottom: none;
+    }
+
+    .contact-inline-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.25rem 0.5rem;
+    }
+
+    .contact-primary-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--rule);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .contact-primary-link:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
+
+    .maps-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      margin-top: 0.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    /* Enquiry Form */
+    .enquiry-form {
+      border-top: 1px solid var(--rule-strong);
+      padding-top: 1.75rem;
+    }
+
+    .checklist-attached-banner {
+      display: none;
+      padding: 0.875rem 1rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--accent);
+      background-color: var(--accent-tint);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .checklist-attached-banner.is-visible {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem 1rem;
+    }
+
+    .banner-clear-btn {
+      background: transparent;
+      border: 0;
+      padding: 0.25rem 0;
+      min-height: 36px;
+      font-family: var(--font-sans);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .field-label {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .field-required {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .field-input,
+    .field-select,
+    .field-textarea {
+      width: 100%;
+      min-height: 46px;
+      padding: 0.7rem 0.85rem;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.45;
+      color: var(--ink);
+      background-color: var(--paper-sheet);
+      border: 1px solid var(--ink);
+      border-radius: 0;
+      appearance: none;
+    }
+
+    .field-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%231A1917' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.9rem center;
+      padding-right: 2.5rem;
+    }
+
+    .field-textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .field-input[aria-invalid="true"],
+    .field-select[aria-invalid="true"],
+    .field-textarea[aria-invalid="true"] {
+      border-color: var(--accent);
+    }
+
+    .field-error {
+      font-size: 0.8125rem;
+      color: var(--accent);
+      min-height: 1.15em;
+    }
+
+    .form-submit-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .form-privacy-note {
+      font-size: 0.8125rem;
+      color: var(--ink-secondary);
+      max-width: 44ch;
+    }
+
+    /* Confirmation Notice */
+    .confirmation-box {
+      display: none;
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background-color: var(--paper-sheet);
+      border: 1px solid var(--ink);
+      border-top: 3px solid var(--ink);
+    }
+
+    .confirmation-box.is-visible {
+      display: block;
+    }
+
+    .confirmation-kicker {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.45rem;
+    }
+
+    .confirmation-box h3 {
+      margin-bottom: 0.75rem;
+    }
+
+    .confirmation-note {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--ink-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .confirmation-summary {
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 0.75rem 0;
+      margin-bottom: 1.25rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+    }
+
+    .summary-pair {
+      display: grid;
+      grid-template-columns: 7.5rem 1fr;
+      gap: 0.75rem;
+      font-size: 0.90625rem;
+    }
+
+    .summary-pair dt {
+      font-weight: 600;
+      color: var(--ink-muted);
+    }
+
+    .summary-pair dd {
+      color: var(--ink);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    /* ==========================================================================
+       11. FOOTER (WARM PAPER COLOPHON, 1PX INK TOP RULE)
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--paper);
+      padding-top: 2.5rem;
+      padding-bottom: 3rem;
+    }
+
+    .footer-top-row {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .footer-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .footer-abn {
+      font-size: 0.875rem;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .logo-download-btn {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--ink);
+      cursor: pointer;
+    }
+
+    .logo-download-btn:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
+
+    .footer-bottom-row {
+      padding-top: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      color: var(--ink-secondary);
+    }
+
+    /* ==========================================================================
+       12. RESPONSIVE BREAKPOINTS (MOBILE-FIRST -> TABLET & DESKTOP)
+       ========================================================================== */
+    @media (min-width: 680px) {
+      .matter-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .form-grid-two {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+      }
+
+      .auth-options-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .auth-option-row {
+        border-bottom: none;
+        border-right: 1px solid var(--rule);
+      }
+
+      .auth-option-row:last-child {
+        border-right: none;
+      }
+
+      .doc-category-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .doc-category-row {
+        border-right: 1px solid var(--rule);
+      }
+
+      .doc-category-row:nth-child(2n) {
+        border-right: none;
+      }
+
+      .doc-category-row:nth-last-child(-n+2) {
+        border-bottom: none;
+      }
+    }
+
+    @media (min-width: 860px) {
+      .desktop-nav {
+        display: block;
+      }
+
+      .menu-toggle,
+      .mobile-drawer {
+        display: none !important;
+      }
+
+      /* Opening lead band: 8 cols left, 4 cols right with 1px vertical rule */
+      .lead-grid {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 0;
+        align-items: start;
+      }
+
+      .lead-primary {
+        grid-column: 1 / span 8;
+        padding-right: 3rem;
+      }
+
+      .office-ledger {
+        grid-column: 9 / span 4;
+        border-top: none;
+        border-left: 1px solid var(--rule);
+        padding-top: 0;
+        padding-left: 2.25rem;
+      }
+
+      /* Standard sections: 4 cols left metadata, 8 cols right content */
+      .editorial-grid {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 0;
+        align-items: start;
+      }
+
+      .col-left {
+        grid-column: 1 / span 4;
+        padding-right: 2.75rem;
+      }
+
+      .col-right {
+        grid-column: 5 / span 8;
+      }
+
+      .practice-row {
+        grid-template-columns: 3.25rem 1fr;
+        gap: 1.25rem;
+      }
+
+      .footer-top-row {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+
+      .footer-meta {
+        align-items: flex-end;
+        text-align: right;
+      }
+
+      .footer-bottom-row {
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        align-items: start;
+      }
+
+      .footer-copyright {
+        text-align: right;
+      }
+    }
+
+    /* ==========================================================================
+       13. PRINT STYLESHEET — PRINTS ONLY FORM HL-01 CLEANLY ON A4 PAPER
+       ========================================================================== */
+    @page {
+      size: A4 portrait;
+      margin: 15mm;
+    }
+
+    @media print {
+      html,
+      body {
+        background: #FFFFFF !important;
+        color: #000000 !important;
+        font-size: 10.5pt;
+        line-height: 1.45;
+      }
+
+      /* Hide everything except Form HL-01 */
+      .skip-link,
+      .site-header,
+      .lead-band,
+      .notary-intro,
+      #practice,
+      #approach,
+      #contact,
+      .site-footer,
+      .form-actions {
+        display: none !important;
+      }
+
+      .editorial-section {
+        padding: 0 !important;
+        border: none !important;
+      }
+
+      .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .legal-form-sheet {
+        background: #FFFFFF !important;
+        border: 1pt solid #000000 !important;
+      }
+
+      .form-double-rule {
+        border-top: 2pt solid #000000 !important;
+        border-bottom: 1pt solid #000000 !important;
+      }
+
+      .form-masthead,
+      .form-part,
+      .form-footer-bar {
+        border-color: #000000 !important;
+      }
+
+      .form-part-header,
+      .guidance-block,
+      .doc-category-row.is-selected,
+      .auth-option-row.is-selected {
+        background-color: #FFFFFF !important;
+      }
+
+      .doc-category-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+
+      .auth-options-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      }
+
+      .doc-category-row,
+      .auth-option-row {
+        min-height: auto !important;
+        padding: 6pt 10pt !important;
+      }
+
+      .checklist-num {
+        padding: 7pt 0 7pt 10pt !important;
+      }
+
+      .checklist-check-wrap {
+        min-height: auto !important;
+        padding-top: 8pt !important;
+      }
+
+      .checklist-label {
+        padding: 7pt 10pt 7pt 4pt !important;
+        opacity: 1 !important;
+      }
+
+      .checklist-row.is-checked .custom-checkbox-box,
+      .doc-category-row.is-selected .custom-radio-box,
+      .auth-option-row.is-selected .custom-radio-box {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .print-only-notes {
+        display: block !important;
+        padding: 10pt 12pt;
+        border-top: 1pt solid #000000;
+        font-size: 9pt;
+        color: #000000;
+      }
+
+      .print-lines-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 16pt;
+        margin-bottom: 8pt;
+      }
+
+      .print-office-footer {
+        font-size: 8.5pt;
+        color: #333333;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <!-- Skip link for keyboard and screen-reader users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ======================================================================
+       HEADER — SINGLE-ROW RULED BAR ON WARM PAPER
+       ====================================================================== -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#top" class="brand-link" aria-label="Henley Legal — Return to top">
+          <!-- Henley Legal vector wordmark SVG -->
+          <svg class="brand-svg" viewBox="0 0 264 74" role="img" aria-label="Henley Legal — Public Notary, Business &amp; Property Law Specialists" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="25" fill="#1A1917" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="25.5">
+              <tspan font-weight="600" font-style="normal" letter-spacing="0.025em">HENLEY</tspan><tspan font-weight="400" font-style="italic" letter-spacing="0.015em">LEGAL</tspan>
+            </text>
+            <text x="20" y="42" fill="#1A1917" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11.25" font-weight="400" letter-spacing="0.015em">Public Notary</text>
+            <text x="20" y="55.5" fill="#1A1917" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11.25" font-weight="400" letter-spacing="0.015em">Business &amp;</text>
+            <text x="20" y="69" fill="#1A1917" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11.25" font-weight="400" letter-spacing="0.015em">Property Law Specialists</text>
+          </svg>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <ul class="nav-list">
+            <li><a href="#notary-form" class="nav-link">Notary checklist</a></li>
+            <li><a href="#practice" class="nav-link">Practice areas</a></li>
+            <li><a href="#approach" class="nav-link">Working with us</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button
+          type="button"
+          id="menu-toggle"
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="mobile-drawer"
+        >
+          Menu
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-drawer" class="mobile-drawer" aria-label="Mobile navigation">
+      <div class="container">
+        <ul class="mobile-nav-list">
+          <li>
+            <a href="#notary-form" class="mobile-nav-link">
+              <span>Notary checklist</span>
+              <span class="mobile-nav-meta">01</span>
+            </a>
+          </li>
+          <li>
+            <a href="#practice" class="mobile-nav-link">
+              <span>Practice areas</span>
+              <span class="mobile-nav-meta">02</span>
+            </a>
+          </li>
+          <li>
+            <a href="#approach" class="mobile-nav-link">
+              <span>Working with us</span>
+              <span class="mobile-nav-meta">03</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="mobile-nav-link">
+              <span>Contact</span>
+              <span class="mobile-nav-meta">04</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- ====================================================================
+         LEAD / OPENING BAND — LEFT-ALIGNED ASYMMETRIC GRID
+         ==================================================================== -->
+    <section class="lead-band" aria-labelledby="page-title">
+      <div class="container">
+        <div class="lead-grid">
+          <div class="lead-primary">
+            <span class="kicker">Camberwell, Victoria — Est. 2006</span>
+            <h1 id="page-title" class="lead-heading">Public notary, business and property law in Camberwell.</h1>
+            <p class="lead-copy">
+              Henley Legal has practised on Toorak Road since April 2006. We witness and authenticate documents for overseas use, act on Victorian property transactions, and advise private businesses and families on commercial agreements, trusts, and estates.
+            </p>
+            <div class="lead-actions">
+              <a href="#notary-form" class="btn btn-primary">Prepare notary checklist</a>
+              <a href="#contact" class="btn btn-secondary">Request an appointment</a>
+            </div>
+          </div>
+
+          <aside class="office-ledger" aria-label="Practice contact details">
+            <div class="ledger-row">
+              <span class="ledger-label">Telephone</span>
+              <a href="tel:0398897988" class="ledger-phone">(03) 9889 7988</a>
+            </div>
+            <div class="ledger-row">
+              <span class="ledger-label">Office address</span>
+              <div class="ledger-value">1378A Toorak Road, Camberwell VIC 3124</div>
+              <span class="ledger-sub">Near Burwood Station</span>
+            </div>
+            <div class="ledger-row">
+              <span class="ledger-label">Hours</span>
+              <div class="ledger-value">Monday to Friday, 9:00 am – 5:00 pm</div>
+              <span class="ledger-sub">By appointment</span>
+            </div>
+            <div class="ledger-row">
+              <span class="ledger-label">Email</span>
+              <a href="mailto:mail@henleylegal.com" class="ledger-email">mail@henleylegal.com</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 01 (HERO FEATURE): PUBLIC NOTARY PREPARATION FORM HL-01
+         ==================================================================== -->
+    <section id="notary-form" class="editorial-section" aria-labelledby="notary-heading">
+      <div class="container">
+        <div class="editorial-grid notary-intro">
+          <div class="col-left">
+            <span class="section-index">01 / Public notary</span>
+            <h2 id="notary-heading" class="section-intro-title">Before your notary appointment.</h2>
+          </div>
+          <div class="col-right">
+            <p class="notary-intro-note">
+              Notarising documents for overseas authorities requires original paperwork and sighting of identification in person. Complete this sheet before attending our Toorak Road office.
+            </p>
+          </div>
+        </div>
+
+        <!-- Physical Legal Form Sheet: FORM HL-01 -->
+        <div id="hl01-document" class="legal-form-sheet" role="region" aria-label="Form HL-01 Public Notary Appointment Checklist">
+          <div class="form-double-rule" aria-hidden="true"></div>
+
+          <div class="form-masthead">
+            <div class="form-code">FORM HL-01 — PUBLIC NOTARY APPOINTMENT CHECKLIST</div>
+            <div class="form-office-stamp">HENLEY LEGAL · CAMBERWELL VIC</div>
+          </div>
+
+          <!-- Part A: Document Category -->
+          <div class="form-part">
+            <div class="form-part-header">
+              <span class="form-part-title">Part A — Document category</span>
+              <span class="form-part-hint">Select one document type to load required items</span>
+            </div>
+            <fieldset class="form-fieldset">
+              <legend class="sr-only">Select document category</legend>
+              <div id="doc-category-list" class="doc-category-list">
+                <label class="doc-category-row is-selected" data-category="poa">
+                  <input type="radio" name="notaryCategory" value="poa" checked>
+                  <span class="custom-radio-box" aria-hidden="true"><span class="custom-radio-mark"></span></span>
+                  <span class="doc-cat-code">A1</span>
+                  <span class="doc-cat-label">Overseas power of attorney or property deed</span>
+                </label>
+
+                <label class="doc-category-row" data-category="copies">
+                  <input type="radio" name="notaryCategory" value="copies">
+                  <span class="custom-radio-box" aria-hidden="true"><span class="custom-radio-mark"></span></span>
+                  <span class="doc-cat-code">A2</span>
+                  <span class="doc-cat-label">Certified true copies (passport, degree, birth certificate)</span>
+                </label>
+
+                <label class="doc-category-row" data-category="company">
+                  <input type="radio" name="notaryCategory" value="company">
+                  <span class="custom-radio-box" aria-hidden="true"><span class="custom-radio-mark"></span></span>
+                  <span class="doc-cat-code">A3</span>
+                  <span class="doc-cat-label">Company resolution, ASIC extract or commercial deed</span>
+                </label>
+
+                <label class="doc-category-row" data-category="affidavit">
+                  <input type="radio" name="notaryCategory" value="affidavit">
+                  <span class="custom-radio-box" aria-hidden="true"><span class="custom-radio-mark"></span></span>
+                  <span class="doc-cat-code">A4</span>
+                  <span class="doc-cat-label">Overseas affidavit or statutory declaration</span>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Part B: Destination Authentication -->
+          <div class="form-part">
+            <div class="form-part-header">
+              <span class="form-part-title">Part B — Destination authentication</span>
+              <span class="form-part-hint">Determines DFAT Melbourne and consular steps after notarisation</span>
+            </div>
+            <fieldset class="form-fieldset">
+              <legend class="sr-only">Select destination country authentication requirement</legend>
+              <div id="auth-options-grid" class="auth-options-grid">
+                <label class="auth-option-row is-selected" data-auth="hague">
+                  <input type="radio" name="destinationAuth" value="hague" checked>
+                  <span class="custom-radio-box" aria-hidden="true"><span class="custom-radio-mark"></span></span>
+                  <span class="auth-option-text">Hague Convention country (DFAT Apostille)</span>
+                </label>
+
+                <label class="auth-option-row" data-auth="non-hague">
+                  <input type="radio" name="destinationAuth" value="non-hague">
+                  <span class="custom-radio-box" aria-hidden="true"><span class="custom-radio-mark"></span></span>
+                  <span class="auth-option-text">Non-Hague country (DFAT Authentication &amp; Embassy legalisation)</span>
+                </label>
+
+                <label class="auth-option-row" data-auth="unsure">
+                  <input type="radio" name="destinationAuth" value="unsure">
+                  <span class="custom-radio-box" aria-hidden="true"><span class="custom-radio-mark"></span></span>
+                  <span class="auth-option-text">Unsure — confirm at appointment</span>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Part C: Numbered Preparation Checklist -->
+          <div class="form-part">
+            <div class="form-part-header">
+              <span class="form-part-title">Part C — Items to bring to your appointment</span>
+              <span id="checklist-category-caption" class="form-part-hint">Overseas power of attorney or property deed</span>
+            </div>
+
+            <div id="checklist-items-container" class="checklist-table" role="group" aria-label="Notary preparation checklist items">
+              <!-- Populated and updated by JavaScript -->
+            </div>
+
+            <!-- Part D: Australian DFAT Guidance Block -->
+            <div class="guidance-block" aria-live="polite">
+              <div class="guidance-heading" id="guidance-heading">DFAT Melbourne — Hague Apostille note</div>
+              <p class="guidance-text" id="guidance-text">
+                Once our Public Notary witnesses or certifies your document and affixes the notarial seal, the document is lodged with the Department of Foreign Affairs and Trade (DFAT) in Melbourne for an Apostille stamp. An Apostille confirms the Notary's signature and seal for member countries without requiring an embassy visit.
+              </p>
+            </div>
+          </div>
+
+          <!-- Print-only appointment notes for physical A4 paper output -->
+          <div class="print-only-notes">
+            <div class="print-lines-row">
+              <span>Client name: ____________________________________</span>
+              <span>Appointment date &amp; time: ________________________</span>
+            </div>
+            <div class="print-office-footer">
+              Henley Legal · 1378A Toorak Road, Camberwell VIC 3124 · Tel (03) 9889 7988 · mail@henleylegal.com · ABN 46 109 556 149
+            </div>
+          </div>
+
+          <!-- Form Footer Bar -->
+          <div class="form-footer-bar">
+            <div id="checklist-status" class="form-status" role="status" aria-live="polite">
+              Checked: 0 of 4 items
+            </div>
+            <div class="form-actions">
+              <button type="button" id="btn-print-checklist" class="btn btn-secondary">Print checklist</button>
+              <button type="button" id="btn-attach-enquiry" class="btn btn-primary">Attach to appointment enquiry</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 02: PRACTICE AREAS — 1PX-RULED EDITORIAL INDEX
+         ==================================================================== -->
+    <section id="practice" class="editorial-section" aria-labelledby="practice-heading">
+      <div class="container">
+        <div class="editorial-grid">
+          <div class="col-left">
+            <span class="section-index">02 / Practice areas</span>
+            <h2 id="practice-heading" class="section-intro-title">What we act on.</h2>
+            <p class="section-intro-copy">
+              We work with individuals, business owners, and families across Camberwell, Ashburton, Glen Iris, Burwood, and Box Hill.
+            </p>
+          </div>
+
+          <div class="col-right">
+            <div class="practice-index">
+              <article class="practice-row">
+                <div class="practice-num">2.1</div>
+                <div class="practice-body">
+                  <h3>Public notary services</h3>
+                  <p class="practice-desc">
+                    We witness signatures, verify corporate execution, and certify original documents for overseas courts, land registries, universities, and banks.
+                  </p>
+                  <ul class="matter-list">
+                    <li>Notarial certificates and seal</li>
+                    <li>Overseas powers of attorney and land transfers</li>
+                    <li>Certified copies of passports, degrees and civil records</li>
+                    <li>Guidance on DFAT Apostille and consular legalisation</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="practice-row">
+                <div class="practice-num">2.2</div>
+                <div class="practice-body">
+                  <h3>Property and conveyancing</h3>
+                  <p class="practice-desc">
+                    We act for purchasers, vendors, landlords, and tenants on residential and commercial property matters across Victoria.
+                  </p>
+                  <ul class="matter-list">
+                    <li>Pre-signing contract and Section 32 reviews</li>
+                    <li>Residential and commercial PEXA settlements</li>
+                    <li>Retail and commercial lease drafting and review</li>
+                    <li>Subdivisions, caveats and title transfers</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="practice-row">
+                <div class="practice-num">2.3</div>
+                <div class="practice-body">
+                  <h3>Business and commercial law</h3>
+                  <p class="practice-desc">
+                    We draft and review commercial contracts and ownership documents for private companies, sole traders, and family businesses.
+                  </p>
+                  <ul class="matter-list">
+                    <li>Buying and selling businesses and assets</li>
+                    <li>Shareholder, partnership and supply agreements</li>
+                    <li>Company and unit trust structures</li>
+                    <li>Franchise and commercial licence documentation</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="practice-row">
+                <div class="practice-num">2.4</div>
+                <div class="practice-body">
+                  <h3>Wills, estates, trusts and superannuation</h3>
+                  <p class="practice-desc">
+                    We prepare estate plans, administer deceased estates in Victoria, and review family trust and superannuation documents.
+                  </p>
+                  <ul class="matter-list">
+                    <li>Wills and testamentary trusts</li>
+                    <li>Enduring Powers of Attorney</li>
+                    <li>Probate and estate administration</li>
+                    <li>Family trust deed updates and superannuation beneficiary planning</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="practice-row">
+                <div class="practice-num">2.5</div>
+                <div class="practice-body">
+                  <h3>Commercial and property disputes</h3>
+                  <p class="practice-desc">
+                    We advise on practical options early, prepare formal correspondence, and represent clients in settlement negotiations and mediations.
+                  </p>
+                  <ul class="matter-list">
+                    <li>Contract and commercial lease disputes</li>
+                    <li>Co-ownership and boundary negotiations</li>
+                    <li>Debt recovery and statutory demands</li>
+                    <li>Formal mediation preparation and advice</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 03: WORKING WITH HENLEY LEGAL
+         ==================================================================== -->
+    <section id="approach" class="editorial-section" aria-labelledby="approach-heading">
+      <div class="container">
+        <div class="editorial-grid">
+          <div class="col-left">
+            <span class="section-index">03 / Working with us</span>
+            <h2 id="approach-heading" class="section-intro-title">Plain advice and clear costs.</h2>
+          </div>
+
+          <div class="col-right">
+            <div class="approach-list">
+              <div class="approach-item">
+                <h3>Written scope before work starts.</h3>
+                <p>
+                  Before opening a file, we set out the scope of work and fee basis in writing — fixed fees for standard conveyancing and notary items, or staged estimates for commercial and estate work.
+                </p>
+              </div>
+
+              <div class="approach-item">
+                <h3>Direct contact with your solicitor.</h3>
+                <p>
+                  You deal directly with the lawyer handling your matter from initial review to signing or settlement.
+                </p>
+              </div>
+
+              <div class="approach-item">
+                <h3>Long-term private and family matters.</h3>
+                <p>
+                  Many clients stay with the practice across a decade or more for ongoing estate planning, family trust adjustments, superannuation arrangements, and property purchases.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 04: CONTACT & APPOINTMENTS
+         ==================================================================== -->
+    <section id="contact" class="editorial-section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="editorial-grid">
+          <div class="col-left">
+            <span class="section-index">04 / Contact</span>
+            <h2 id="contact-heading" class="section-intro-title">Book an appointment.</h2>
+
+            <div class="contact-ledger">
+              <div class="contact-ledger-row">
+                <span class="ledger-label">Address</span>
+                <div class="ledger-value">1378A Toorak Road, Camberwell VIC 3124</div>
+                <span class="ledger-sub">Short walk from Burwood Station; street parking on Toorak Road.</span>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&amp;query=1378A+Toorak+Road,+Camberwell+VIC+3124"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-link maps-link"
+                >
+                  Open in Google Maps
+                </a>
+              </div>
+
+              <div class="contact-ledger-row">
+                <span class="ledger-label">Phone</span>
+                <div class="contact-inline-group">
+                  <a href="tel:0398897988" class="contact-primary-link">(03) 9889 7988</a>
+                  <button
+                    type="button"
+                    class="copy-btn"
+                    data-copy="(03) 9889 7988"
+                    aria-label="Copy phone number (03) 9889 7988"
+                  >
+                    Copy
+                  </button>
+                </div>
+              </div>
+
+              <div class="contact-ledger-row">
+                <span class="ledger-label">Email</span>
+                <div class="contact-inline-group">
+                  <a href="mailto:mail@henleylegal.com" class="contact-primary-link">mail@henleylegal.com</a>
+                  <button
+                    type="button"
+                    class="copy-btn"
+                    data-copy="mail@henleylegal.com"
+                    aria-label="Copy email address mail@henleylegal.com"
+                  >
+                    Copy
+                  </button>
+                </div>
+              </div>
+
+              <div class="contact-ledger-row">
+                <span class="ledger-label">Hours</span>
+                <div class="ledger-value">Monday to Friday, 9:00 am – 5:00 pm.</div>
+                <span class="ledger-sub">Closed weekends and Victorian public holidays.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-right">
+            <form id="enquiry-form" class="enquiry-form" novalidate>
+              <div id="checklist-attached-banner" class="checklist-attached-banner" role="status" aria-live="polite">
+                <span>Notary checklist summary (Form HL-01) added to your enquiry details below.</span>
+                <button type="button" id="clear-attached-btn" class="banner-clear-btn">Clear attached notes</button>
+              </div>
+
+              <div class="form-grid">
+                <div class="field-group">
+                  <label for="enquiry-name" class="field-label">
+                    Name <span class="field-required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="enquiry-name"
+                    name="name"
+                    class="field-input"
+                    autocomplete="name"
+                    required
+                    aria-describedby="error-name"
+                  >
+                  <span id="error-name" class="field-error" role="alert"></span>
+                </div>
+
+                <div class="form-grid-two">
+                  <div class="field-group">
+                    <label for="enquiry-phone" class="field-label">
+                      Phone <span class="field-required" aria-hidden="true">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="enquiry-phone"
+                      name="phone"
+                      class="field-input tabular"
+                      autocomplete="tel"
+                      required
+                      aria-describedby="error-phone"
+                    >
+                    <span id="error-phone" class="field-error" role="alert"></span>
+                  </div>
+
+                  <div class="field-group">
+                    <label for="enquiry-email" class="field-label">
+                      Email <span class="field-required" aria-hidden="true">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="enquiry-email"
+                      name="email"
+                      class="field-input"
+                      autocomplete="email"
+                      required
+                      aria-describedby="error-email"
+                    >
+                    <span id="error-email" class="field-error" role="alert"></span>
+                  </div>
+                </div>
+
+                <div class="field-group">
+                  <label for="enquiry-matter" class="field-label">Matter type</label>
+                  <select id="enquiry-matter" name="matter" class="field-select">
+                    <option value="Public notary appointment">Public notary appointment</option>
+                    <option value="Property and conveyancing">Property and conveyancing</option>
+                    <option value="Business and commercial law">Business and commercial law</option>
+                    <option value="Wills, estates and trusts">Wills, estates and trusts</option>
+                    <option value="Commercial or property dispute">Commercial or property dispute</option>
+                    <option value="General enquiry">General enquiry</option>
+                  </select>
+                </div>
+
+                <div class="field-group">
+                  <label for="enquiry-details" class="field-label">
+                    Details <span class="field-required" aria-hidden="true">*</span>
+                  </label>
+                  <textarea
+                    id="enquiry-details"
+                    name="details"
+                    class="field-textarea"
+                    rows="6"
+                    placeholder="Briefly describe your matter, document count, or preferred appointment times."
+                    required
+                    aria-describedby="error-details"
+                  ></textarea>
+                  <span id="error-details" class="field-error" role="alert"></span>
+                </div>
+
+                <div class="form-submit-row">
+                  <p class="form-privacy-note">
+                    Please do not include confidential bank details or sensitive identification numbers in this form.
+                  </p>
+                  <button type="submit" class="btn btn-primary">Send enquiry</button>
+                </div>
+              </div>
+            </form>
+
+            <!-- Accessible Paper Confirmation Box -->
+            <div id="confirmation-box" class="confirmation-box" role="status" aria-live="polite" tabindex="-1">
+              <span class="confirmation-kicker">Enquiry recorded</span>
+              <h3>Thank you. Your appointment enquiry is ready.</h3>
+              <p class="confirmation-note">
+                In production, submitting this form sends your enquiry directly to <strong>mail@henleylegal.com</strong>. For urgent notary or contract deadlines, telephone our Camberwell office on <a href="tel:0398897988" class="text-link tabular">(03) 9889 7988</a>.
+              </p>
+              <dl id="confirmation-summary" class="confirmation-summary"></dl>
+              <button type="button" id="btn-new-enquiry" class="btn btn-secondary">Edit or send another enquiry</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       FOOTER — WARM PAPER EDITORIAL COLOPHON
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-row">
+        <div>
+          <svg class="brand-svg" viewBox="0 0 264 74" role="img" aria-label="Henley Legal" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="25" fill="#1A1917" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="25.5">
+              <tspan font-weight="600" font-style="normal" letter-spacing="0.025em">HENLEY</tspan><tspan font-weight="400" font-style="italic" letter-spacing="0.015em">LEGAL</tspan>
+            </text>
+            <text x="20" y="42" fill="#1A1917" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11.25" font-weight="400" letter-spacing="0.015em">Public Notary</text>
+            <text x="20" y="55.5" fill="#1A1917" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11.25" font-weight="400" letter-spacing="0.015em">Business &amp;</text>
+            <text x="20" y="69" fill="#1A1917" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11.25" font-weight="400" letter-spacing="0.015em">Property Law Specialists</text>
+          </svg>
+        </div>
+
+        <div class="footer-meta">
+          <div class="footer-abn">ABN 46 109 556 149 · ACN 109 556 149</div>
+          <button type="button" id="btn-download-logo" class="logo-download-btn">
+            Download vector logo (.svg)
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div>
+          <p>
+            Liability limited by a scheme approved under Professional Standards Legislation. Information on this website is general in nature, applies to Victoria, Australia, and does not constitute legal advice.
+          </p>
+        </div>
+        <div class="footer-copyright">
+          <p>Henley Legal Pty Ltd · 1378A Toorak Road, Camberwell VIC 3124</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       VANILLA JAVASCRIPT — FORM HL-01, ENQUIRY FORM, CLIPBOARD & SVG EXPORT
+       ====================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* --------------------------------------------------------------------
+         1. DATA DEFINITIONS FOR FORM HL-01 (PUBLIC NOTARY CHECKLIST)
+         -------------------------------------------------------------------- */
+      var NOTARY_CATEGORIES = {
+        poa: {
+          label: 'Overseas power of attorney or property deed',
+          items: [
+            {
+              id: 'poa-1',
+              title: 'Bring the original unsigned document.',
+              detail: 'Print the complete deed or power of attorney with all schedules attached. Do not sign or date any page before attending our office.'
+            },
+            {
+              id: 'poa-2',
+              title: 'Bring original photo identification.',
+              detail: 'Bring your current original passport together with your Victorian driver licence or Medicare card.'
+            },
+            {
+              id: 'poa-3',
+              title: 'Bring instructions from the overseas lawyer or registry.',
+              detail: 'Bring any letter or email specifying witness wording, passport copy attachment, or page initialling rules.'
+            },
+            {
+              id: 'poa-4',
+              title: 'Check language and translation requirements.',
+              detail: 'If the document is not in English, let us know when booking so we can confirm whether a NAATI-accredited English translation is required.'
+            }
+          ]
+        },
+        copies: {
+          label: 'Certified true copies (passport, degree, birth certificate)',
+          items: [
+            {
+              id: 'copies-1',
+              title: 'Bring the original source documents.',
+              detail: 'Bring the original passport, academic testamur, transcript, or registry certificate. Scans, screenshots, or photocopies cannot be certified as originals.'
+            },
+            {
+              id: 'copies-2',
+              title: 'Prepare online verification access where applicable.',
+              detail: 'For Australian university degrees or digital transcripts, have your My eQuals login or student number ready if institutional verification is needed.'
+            },
+            {
+              id: 'copies-3',
+              title: 'Bring your personal identification.',
+              detail: 'Bring your current original passport or Victorian driver licence so we can record your identity in our notarial register.'
+            },
+            {
+              id: 'copies-4',
+              title: 'Confirm the number of sets and binding format.',
+              detail: 'Check how many certified sets the overseas recipient requires and whether multiple documents need separate certificates or one bound certificate.'
+            }
+          ]
+        },
+        company: {
+          label: 'Company resolution, ASIC extract or commercial deed',
+          items: [
+            {
+              id: 'company-1',
+              title: 'Bring the original unsigned corporate document.',
+              detail: 'Print the final company resolution, deed, or commercial instrument in full. Directors or company secretaries must sign in the Notary\'s presence.'
+            },
+            {
+              id: 'company-2',
+              title: 'Provide current ASIC company details.',
+              detail: 'Bring a current ASIC company extract or provide the ACN when booking so we can verify current officeholders prior to sealing.'
+            },
+            {
+              id: 'company-3',
+              title: 'Bring identification for every signatory attending.',
+              detail: 'Each director or authorised officer must attend in person with their current original passport and Victorian driver licence.'
+            },
+            {
+              id: 'company-4',
+              title: 'Bring supporting signing authority if required.',
+              detail: 'If signing under a corporate power of attorney or specific execution clause, bring the signed board minute or relevant company constitution pages.'
+            }
+          ]
+        },
+        affidavit: {
+          label: 'Overseas affidavit or statutory declaration',
+          items: [
+            {
+              id: 'affidavit-1',
+              title: 'Bring the complete unsigned affidavit and exhibits.',
+              detail: 'Print the full affidavit and every referenced exhibit in order. Do not sign, date, or initial any page before the appointment.'
+            },
+            {
+              id: 'affidavit-2',
+              title: 'Bring original photo identification.',
+              detail: 'Bring your current original passport together with your Victorian driver licence or Medicare card.'
+            },
+            {
+              id: 'affidavit-3',
+              title: 'Confirm your oath or affirmation preference.',
+              detail: 'Advise the Notary at the appointment whether you wish to swear a religious oath or make a secular affirmation.'
+            },
+            {
+              id: 'affidavit-4',
+              title: 'Bring overseas court or filing instructions.',
+              detail: 'Bring any cover sheet or email from the overseas solicitor noting required jurat wording, exhibit stamping, or binding instructions.'
+            }
+          ]
+        }
+      };
+
+      var AUTH_GUIDANCE = {
+        hague: {
+          label: 'Hague Convention country (DFAT Apostille)',
+          heading: 'DFAT Melbourne — Hague Apostille note',
+          text: 'Once our Public Notary witnesses or certifies your document and affixes the notarial seal, the document is lodged with the Department of Foreign Affairs and Trade (DFAT) in Melbourne for an Apostille stamp. An Apostille confirms the Notary\'s signature and seal for Hague Convention countries without requiring an embassy visit.'
+        },
+        'non-hague': {
+          label: 'Non-Hague country (DFAT Authentication & Embassy legalisation)',
+          heading: 'DFAT Melbourne & Consular Legalisation note',
+          text: 'Countries outside the Hague Apostille Convention require a two-step process after notarisation: first, an Authentication certificate from DFAT in Melbourne, followed by legalisation at the destination country\'s Embassy or Consulate in Australia. Allow additional processing days for both offices.'
+        },
+        unsure: {
+          label: 'Unsure — confirm at appointment',
+          heading: 'Confirming destination requirements at your appointment',
+          text: 'Bring any email or written instructions from the overseas authority, lawyer, or university. At your appointment we will check whether the destination country is a party to the Hague Apostille Convention and explain the exact DFAT or consular steps required.'
+        }
+      };
+
+      /* Application state */
+      var state = {
+        category: 'poa',
+        auth: 'hague',
+        checked: {} // maps item id -> boolean
+      };
+
+      /* --------------------------------------------------------------------
+         2. MOBILE MENU TOGGLE
+         -------------------------------------------------------------------- */
+      function initMobileMenu() {
+        var toggleBtn = document.getElementById('menu-toggle');
+        var drawer = document.getElementById('mobile-drawer');
+        if (!toggleBtn || !drawer) return;
+
+        function setMenuOpen(isOpen) {
+          drawer.classList.toggle('is-open', isOpen);
+          toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          toggleBtn.textContent = isOpen ? 'Close' : 'Menu';
+        }
+
+        toggleBtn.addEventListener('click', function () {
+          var currentlyOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
+          setMenuOpen(!currentlyOpen);
+        });
+
+        var drawerLinks = drawer.querySelectorAll('a');
+        for (var i = 0; i < drawerLinks.length; i++) {
+          drawerLinks[i].addEventListener('click', function () {
+            setMenuOpen(false);
+          });
+        }
+
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape' && toggleBtn.getAttribute('aria-expanded') === 'true') {
+            setMenuOpen(false);
+            toggleBtn.focus();
+          }
+        });
+      }
+
+      /* --------------------------------------------------------------------
+         3. FORM HL-01 INTERACTIVE CHECKLIST ENGINE
+         -------------------------------------------------------------------- */
+      function renderChecklist() {
+        var container = document.getElementById('checklist-items-container');
+        var captionEl = document.getElementById('checklist-category-caption');
+        if (!container) return;
+
+        var categoryData = NOTARY_CATEGORIES[state.category];
+        if (!categoryData) return;
+
+        if (captionEl) {
+          captionEl.textContent = categoryData.label;
+        }
+
+        // Clear existing checklist rows safely
+        container.innerHTML = '';
+
+        categoryData.items.forEach(function (item, idx) {
+          var isChecked = Boolean(state.checked[item.id]);
+          var indexText = (idx + 1 < 10 ? '0' : '') + (idx + 1);
+          var inputId = 'hl01-check-' + item.id;
+
+          var row = document.createElement('div');
+          row.className = 'checklist-row' + (isChecked ? ' is-checked' : '');
+
+          var numCol = document.createElement('div');
+          numCol.className = 'checklist-num';
+          numCol.textContent = indexText;
+
+          var checkWrap = document.createElement('label');
+          checkWrap.className = 'checklist-check-wrap';
+          checkWrap.setAttribute('for', inputId);
+
+          var checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.id = inputId;
+          checkbox.checked = isChecked;
+          checkbox.setAttribute('aria-label', 'Mark item ' + indexText + ' complete: ' + item.title);
+
+          var customBox = document.createElement('span');
+          customBox.className = 'custom-checkbox-box';
+          customBox.setAttribute('aria-hidden', 'true');
+          customBox.innerHTML =
+            '<svg class="check-tick" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">' +
+            '<polyline points="2,6.5 4.8,9.2 10,3.2" stroke-linecap="square" stroke-linejoin="miter"/>' +
+            '</svg>';
+
+          checkWrap.appendChild(checkbox);
+          checkWrap.appendChild(customBox);
+
+          var textLabel = document.createElement('label');
+          textLabel.className = 'checklist-label';
+          textLabel.setAttribute('for', inputId);
+
+          var titleSpan = document.createElement('span');
+          titleSpan.className = 'checklist-item-title';
+          titleSpan.textContent = item.title + ' ';
+
+          var detailSpan = document.createElement('span');
+          detailSpan.className = 'checklist-item-detail';
+          detailSpan.textContent = item.detail;
+
+          textLabel.appendChild(titleSpan);
+          textLabel.appendChild(detailSpan);
+
+          checkbox.addEventListener('change', function () {
+            state.checked[item.id] = checkbox.checked;
+            row.classList.toggle('is-checked', checkbox.checked);
+            updateChecklistStatus();
+          });
+
+          row.appendChild(numCol);
+          row.appendChild(checkWrap);
+          row.appendChild(textLabel);
+          container.appendChild(row);
+        });
+
+        updateChecklistStatus();
+      }
+
+      function updateChecklistStatus() {
+        var statusEl = document.getElementById('checklist-status');
+        if (!statusEl) return;
+
+        var items = NOTARY_CATEGORIES[state.category].items;
+        var total = items.length;
+        var checkedCount = 0;
+
+        for (var i = 0; i < items.length; i++) {
+          if (state.checked[items[i].id]) {
+            checkedCount += 1;
+          }
+        }
+
+        if (checkedCount === total) {
+          statusEl.textContent = 'Ready for appointment (' + checkedCount + ' of ' + total + ')';
+          statusEl.classList.add('is-complete');
+        } else {
+          statusEl.textContent = 'Checked: ' + checkedCount + ' of ' + total + ' items';
+          statusEl.classList.remove('is-complete');
+        }
+      }
+
+      function updateGuidanceBlock() {
+        var headingEl = document.getElementById('guidance-heading');
+        var textEl = document.getElementById('guidance-text');
+        var data = AUTH_GUIDANCE[state.auth];
+        if (!data || !headingEl || !textEl) return;
+
+        headingEl.textContent = data.heading;
+        textEl.textContent = data.text;
+      }
+
+      function buildChecklistSummaryText() {
+        var categoryData = NOTARY_CATEGORIES[state.category];
+        var authData = AUTH_GUIDANCE[state.auth];
+        var uncheckedTitles = [];
+        var checkedCount = 0;
+
+        categoryData.items.forEach(function (item, idx) {
+          if (state.checked[item.id]) {
+            checkedCount += 1;
+          } else {
+            uncheckedTitles.push('0' + (idx + 1) + '. ' + item.title);
+          }
+        });
+
+        var lines = [
+          'Form HL-01 — Public Notary Preparation Summary',
+          'Document category: ' + categoryData.label,
+          'Destination authentication: ' + authData.label,
+          'Checklist status: ' + checkedCount + ' of ' + categoryData.items.length + ' items ready'
+        ];
+
+        if (uncheckedTitles.length > 0) {
+          lines.push('Items still to confirm or bring:');
+          uncheckedTitles.forEach(function (line) {
+            lines.push('  - ' + line);
+          });
+        } else {
+          lines.push('All preparation items confirmed ready.');
+        }
+
+        lines.push('');
+        lines.push('Preferred appointment day/time:');
+        return lines.join('\n');
+      }
+
+      function initNotaryForm() {
+        var categoryInputs = document.querySelectorAll('input[name="notaryCategory"]');
+        var authInputs = document.querySelectorAll('input[name="destinationAuth"]');
+        var printBtn = document.getElementById('btn-print-checklist');
+        var attachBtn = document.getElementById('btn-attach-enquiry');
+
+        for (var i = 0; i < categoryInputs.length; i++) {
+          categoryInputs[i].addEventListener('change', function (event) {
+            state.category = event.target.value;
+            var rows = document.querySelectorAll('.doc-category-row');
+            for (var j = 0; j < rows.length; j++) {
+              rows[j].classList.toggle('is-selected', rows[j].getAttribute('data-category') === state.category);
+            }
+            renderChecklist();
+          });
+        }
+
+        for (var k = 0; k < authInputs.length; k++) {
+          authInputs[k].addEventListener('change', function (event) {
+            state.auth = event.target.value;
+            var optRows = document.querySelectorAll('.auth-option-row');
+            for (var m = 0; m < optRows.length; m++) {
+              optRows[m].classList.toggle('is-selected', optRows[m].getAttribute('data-auth') === state.auth);
+            }
+            updateGuidanceBlock();
+          });
+        }
+
+        if (printBtn) {
+          printBtn.addEventListener('click', function () {
+            try {
+              window.print();
+            } catch (err) {
+              // Silent fallback if print dialog is blocked in embedded frame
+            }
+          });
+        }
+
+        if (attachBtn) {
+          attachBtn.addEventListener('click', function () {
+            var matterSelect = document.getElementById('enquiry-matter');
+            var detailsTextarea = document.getElementById('enquiry-details');
+            var banner = document.getElementById('checklist-attached-banner');
+            var contactSection = document.getElementById('contact');
+            var enquiryForm = document.getElementById('enquiry-form');
+            var confirmationBox = document.getElementById('confirmation-box');
+
+            // Ensure form is visible if previously submitted
+            if (enquiryForm && confirmationBox) {
+              enquiryForm.style.display = '';
+              confirmationBox.classList.remove('is-visible');
+            }
+
+            if (matterSelect) {
+              matterSelect.value = 'Public notary appointment';
+            }
+
+            if (detailsTextarea) {
+              detailsTextarea.value = buildChecklistSummaryText();
+              detailsTextarea.setAttribute('aria-invalid', 'false');
+              var errDetails = document.getElementById('error-details');
+              if (errDetails) errDetails.textContent = '';
+            }
+
+            if (banner) {
+              banner.classList.add('is-visible');
+            }
+
+            if (contactSection) {
+              contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            // Move keyboard focus cleanly after smooth scroll settles
+            setTimeout(function () {
+              var nameInput = document.getElementById('enquiry-name');
+              if (nameInput && !nameInput.value.trim()) {
+                nameInput.focus({ preventScroll: true });
+              } else if (detailsTextarea) {
+                detailsTextarea.focus({ preventScroll: true });
+              }
+            }, 450);
+          });
+        }
+
+        renderChecklist();
+        updateGuidanceBlock();
+      }
+
+      /* --------------------------------------------------------------------
+         4. CLIPBOARD COPY HELPER (IFRAME-SAFE VIA document.execCommand)
+         -------------------------------------------------------------------- */
+      function copyTextToClipboard(text) {
+        var textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.setAttribute('readonly', '');
+        textArea.style.position = 'fixed';
+        textArea.style.top = '-9999px';
+        textArea.style.left = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        var succeeded = false;
+        try {
+          succeeded = document.execCommand('copy');
+        } catch (err) {
+          succeeded = false;
+        }
+
+        document.body.removeChild(textArea);
+        return succeeded;
+      }
+
+      function initCopyButtons() {
+        var buttons = document.querySelectorAll('.copy-btn');
+        for (var i = 0; i < buttons.length; i++) {
+          (function (btn) {
+            var resetTimer = null;
+            btn.addEventListener('click', function () {
+              var value = btn.getAttribute('data-copy');
+              if (!value) return;
+
+              copyTextToClipboard(value);
+              btn.textContent = 'Copied';
+              btn.classList.add('is-copied');
+
+              if (resetTimer) clearTimeout(resetTimer);
+              resetTimer = setTimeout(function () {
+                btn.textContent = 'Copy';
+                btn.classList.remove('is-copied');
+              }, 2200);
+            });
+          })(buttons[i]);
+        }
+      }
+
+      /* --------------------------------------------------------------------
+         5. CONTACT & APPOINTMENT ENQUIRY FORM VALIDATION + CONFIRMATION
+         -------------------------------------------------------------------- */
+      function initEnquiryForm() {
+        var form = document.getElementById('enquiry-form');
+        var confirmationBox = document.getElementById('confirmation-box');
+        var summaryEl = document.getElementById('confirmation-summary');
+        var newEnquiryBtn = document.getElementById('btn-new-enquiry');
+        var clearAttachedBtn = document.getElementById('clear-attached-btn');
+        var banner = document.getElementById('checklist-attached-banner');
+
+        if (!form || !confirmationBox || !summaryEl) return;
+
+        var fields = {
+          name: document.getElementById('enquiry-name'),
+          phone: document.getElementById('enquiry-phone'),
+          email: document.getElementById('enquiry-email'),
+          matter: document.getElementById('enquiry-matter'),
+          details: document.getElementById('enquiry-details')
+        };
+
+        var errors = {
+          name: document.getElementById('error-name'),
+          phone: document.getElementById('error-phone'),
+          email: document.getElementById('error-email'),
+          details: document.getElementById('error-details')
+        };
+
+        function setFieldError(key, message) {
+          if (fields[key]) {
+            fields[key].setAttribute('aria-invalid', message ? 'true' : 'false');
+          }
+          if (errors[key]) {
+            errors[key].textContent = message || '';
+          }
+        }
+
+        // Clear inline errors on user input
+        ['name', 'phone', 'email', 'details'].forEach(function (key) {
+          if (!fields[key]) return;
+          fields[key].addEventListener('input', function () {
+            if (fields[key].value.trim()) {
+              setFieldError(key, '');
+            }
+          });
+        });
+
+        if (clearAttachedBtn && banner) {
+          clearAttachedBtn.addEventListener('click', function () {
+            fields.details.value = '';
+            banner.classList.remove('is-visible');
+            fields.details.focus();
+          });
+        }
+
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          var nameVal = fields.name.value.trim();
+          var phoneVal = fields.phone.value.trim();
+          var emailVal = fields.email.value.trim();
+          var matterVal = fields.matter.value;
+          var detailsVal = fields.details.value.trim();
+
+          var firstInvalid = null;
+
+          if (!nameVal) {
+            setFieldError('name', 'Please enter your name.');
+            firstInvalid = firstInvalid || fields.name;
+          } else {
+            setFieldError('name', '');
+          }
+
+          if (!phoneVal || phoneVal.replace(/[^0-9]/g, '').length < 8) {
+            setFieldError('phone', 'Please enter a valid Australian or international phone number.');
+            firstInvalid = firstInvalid || fields.phone;
+          } else {
+            setFieldError('phone', '');
+          }
+
+          var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailVal || !emailPattern.test(emailVal)) {
+            setFieldError('email', 'Please enter a valid email address.');
+            firstInvalid = firstInvalid || fields.email;
+          } else {
+            setFieldError('email', '');
+          }
+
+          if (!detailsVal) {
+            setFieldError('details', 'Please provide brief details of your enquiry.');
+            firstInvalid = firstInvalid || fields.details;
+          } else {
+            setFieldError('details', '');
+          }
+
+          if (firstInvalid) {
+            firstInvalid.focus();
+            return;
+          }
+
+          // Render crisp paper confirmation summary safely using textContent
+          summaryEl.innerHTML = '';
+          var pairs = [
+            ['Name', nameVal],
+            ['Phone', phoneVal],
+            ['Email', emailVal],
+            ['Matter type', matterVal],
+            ['Details', detailsVal]
+          ];
+
+          pairs.forEach(function (pair) {
+            var row = document.createElement('div');
+            row.className = 'summary-pair';
+
+            var dt = document.createElement('dt');
+            dt.textContent = pair[0];
+
+            var dd = document.createElement('dd');
+            dd.textContent = pair[1];
+
+            row.appendChild(dt);
+            row.appendChild(dd);
+            summaryEl.appendChild(row);
+          });
+
+          form.style.display = 'none';
+          confirmationBox.classList.add('is-visible');
+          confirmationBox.focus();
+        });
+
+        if (newEnquiryBtn) {
+          newEnquiryBtn.addEventListener('click', function () {
+            confirmationBox.classList.remove('is-visible');
+            form.style.display = '';
+            fields.name.focus();
+          });
+        }
+      }
+
+      /* --------------------------------------------------------------------
+         6. DOWNLOADABLE VECTOR LOGO (.SVG) EXPORT
+         -------------------------------------------------------------------- */
+      function initLogoDownload() {
+        var downloadBtn = document.getElementById('btn-download-logo');
+        if (!downloadBtn) return;
+
+        downloadBtn.addEventListener('click', function () {
+          try {
+            var svgSource = [
+              '<?xml version="1.0" encoding="UTF-8"?>',
+              '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 74" width="528" height="148">',
+              '  <title>Henley Legal — Public Notary, Business &amp; Property Law Specialists</title>',
+              '  <text x="0" y="25" fill="#1A1917" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="25.5">',
+              '    <tspan font-weight="600" font-style="normal" letter-spacing="0.025em">HENLEY</tspan><tspan font-weight="400" font-style="italic" letter-spacing="0.015em">LEGAL</tspan>',
+              '  </text>',
+              '  <text x="20" y="42" fill="#1A1917" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="11.25" font-weight="400" letter-spacing="0.015em">Public Notary</text>',
+              '  <text x="20" y="55.5" fill="#1A1917" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="11.25" font-weight="400" letter-spacing="0.015em">Business &amp;</text>',
+              '  <text x="20" y="69" fill="#1A1917" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="11.25" font-weight="400" letter-spacing="0.015em">Property Law Specialists</text>',
+              '</svg>'
+            ].join('\n');
+
+            var blob = new Blob([svgSource], { type: 'image/svg+xml;charset=utf-8' });
+            var url = URL.createObjectURL(blob);
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = 'henley-legal-logo.svg';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            setTimeout(function () {
+              URL.revokeObjectURL(url);
+            }, 1000);
+          } catch (err) {
+            // Fail gracefully if blob downloads are restricted
+          }
+        });
+      }
+
+      /* --------------------------------------------------------------------
+         7. INITIALISE ON DOM READY
+         -------------------------------------------------------------------- */
+      document.addEventListener('DOMContentLoaded', function () {
+        initMobileMenu();
+        initNotaryForm();
+        initCopyButtons();
+        initEnquiryForm();
+        initLogoDownload();
+      });
+    })();
+  </script>
+</body>
+</html>
