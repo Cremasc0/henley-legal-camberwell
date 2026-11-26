@@ -72,12 +72,37 @@ Page sections:
 
 1. **Hero** — practice introduction and contact ledger
 2. **Public notary** — Form HL-01 appointment checklist, with the DFAT Apostille note
-3. **What we act on** — practice areas
-4. **Plain advice and clear costs** — how the practice works
-5. **Book an appointment** — contact details and enquiry
+3. **The firm** — admitted since 1990, business and property specialism, notary in-house
+4. **What we act on** — the thirteen practice areas
+5. **Accreditations** — principal, qualifications, and admissions/accreditation ledger
+6. **Plain advice and clear costs** — fee assessment, rates, volume discounts, reporting
+7. **Book an appointment** — contact details and enquiry
+8. **Disclaimer and copyright** — general-information disclaimer and copyright position
 
-Practice areas covered: public notary services, property and conveyancing, business and
-commercial law, wills/estates/trusts/superannuation, and commercial and property disputes.
+## Content source
+
+Copy and facts are aligned to the practice's live site at <https://henleylegal.com/>, whose
+public pages are Home (*The Firm*, *Legal Costs*), Contact Us, Practice Area, Accreditations,
+and Disclaimer & Copyright. The Joomla-only elements there — *Library (staff access only)*
+and the *Who's Online* widget — are deliberately not reproduced.
+
+The thirteen practice areas are taken from the live Practice Area page: Building &
+Construction, Business & Commercial Law, Contract, Corporations, Equity & Trusts, Evidence,
+Insolvency & Bankruptcy, Insurance, Intellectual Property, Leases & Tenancies, Litigation
+Practice & Procedure, Product Liability, and Real Property.
+
+### Details not confirmed by the live site
+
+These appear in the demo but are **not** on the practice's current website. Confirm with the
+client before sign-off:
+
+| Detail | Status |
+| --- | --- |
+| `mail@henleylegal.com` | Not published on the live site; Contact Us offers only a web enquiry form |
+| Opening hours (Mon–Fri, 9:00–5:00) | Not published; the live site only says staff are reachable during and after office hours |
+| ABN 46 109 556 149 / ACN 109 556 149 | Not published anywhere on the live site |
+| "Near Burwood Station" | Not on the live site, and the station near 1378A Toorak Road is Camberwell, not Burwood |
+| "Established April 2006" | Removed. The live site says admitted to practise since **1990**; the 2006 date was unsupported |
 
 ## Running locally
 
@@ -104,10 +129,11 @@ Any push to `main` republishes the site.
 
 | | |
 | --- | --- |
+| Principal | Henry Wong, B.Juris., LLB., GDipFin&Invest, GDipIWeb, LLM, LLM (Applied Law — Commercial Litigation) |
 | Address | 1378A Toorak Road, Camberwell VIC 3124 |
 | Phone | (03) 9889 7988 |
-| Email | mail@henleylegal.com |
-| ABN | 46 109 556 149 |
+| Email | mail@henleylegal.com *(unconfirmed — see above)* |
+| ABN | 46 109 556 149 *(unconfirmed — see above)* |
 
 ## Notes
 
